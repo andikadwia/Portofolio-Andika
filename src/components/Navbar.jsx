@@ -7,7 +7,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
       const sections = ['home', 'about', 'portfolio', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
@@ -16,7 +15,6 @@ const Navbar = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const height = element.offsetHeight;
-
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
             setActiveSection(section);
           }
@@ -36,11 +34,16 @@ const Navbar = () => {
   ];
 
   return (
+    // Menghilangkan border-b dan menggantinya dengan shadow lembut
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-[#0B1120]/80 backdrop-blur-md py-4 border-b border-cyan-500/10 shadow-lg' : 'bg-transparent py-6'
+      isScrolled ? 'bg-[#0B1120]/80 backdrop-blur-md py-4 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]' : 'bg-transparent py-6'
     } px-8 md:px-16 flex justify-between items-center`}>
       
-      <div className="text-2xl font-bold text-white cursor-pointer tracking-wider">
+      {/* Fungsi Refresh Browser Saat Logo Diklik */}
+      <div 
+        onClick={() => window.location.reload()} 
+        className="text-2xl font-bold text-white cursor-pointer tracking-wider hover:scale-105 transition-transform"
+      >
         D<span className="text-cyan-400">K</span>
       </div>
 
@@ -54,7 +57,6 @@ const Navbar = () => {
             }`}
           >
             {link.name}
-            
             <span className={`absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 rounded-full ${
               activeSection === link.id ? 'w-full' : 'w-0 group-hover:w-full'
             }`}></span>
