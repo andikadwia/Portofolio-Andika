@@ -109,34 +109,18 @@ const Portfolio = () => {
     }
   ];
 
-  const techCategories = [
-    {
-      title: "Frontend & UI",
-      icon: "🎨",
-      skills: [
-        { name: "React.js", icon: "⚛️", color: "text-cyan-400" },
-        { name: "Tailwind", icon: "🌊", color: "text-cyan-300" },
-        { name: "Vite", icon: "⚡", color: "text-indigo-400" }
-      ]
-    },
-    {
-      title: "Data & AI",
-      icon: "🧠",
-      skills: [
-        { name: "Python", icon: "🐍", color: "text-blue-400" },
-        { name: "Machine L.", icon: "🤖", color: "text-teal-400" },
-        { name: "Data Mining", icon: "📊", color: "text-cyan-500" }
-      ]
-    },
-    {
-      title: "Infrastructure",
-      icon: "⚙️",
-      skills: [
-        { name: "Ubuntu", icon: "🐧", color: "text-orange-500" },
-        { name: "Node.js", icon: "🟩", color: "text-teal-500" },
-        { name: "Git", icon: "📚", color: "text-blue-500" }
-      ]
-    }
+  // Modifikasi: Menggabungkan tech stack jadi satu list rata tanpa kategori, hanya menggunakan teknologi ril dengan logo resmi
+  const skills = [
+    { name: "JavaScript", icon: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" },
+    { name: "PHP", icon: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" },
+    { name: "Python", icon: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" },
+    { name: "React.js", icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
+    { name: "Laravel", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" },
+    { name: "Flutter", icon: "/flutter.png" },
+    { name: "Tailwind CSS", icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
+    { name: "MySQL", icon: "/mysql.png" },
+    { name: "Vite", icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" },
+    { name: "Git", icon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" }
   ];
 
   return (
@@ -227,7 +211,6 @@ const Portfolio = () => {
                   </div>
 
                   <div className="flex justify-between items-center pt-4 border-t border-cyan-500/10">
-                    {/* Tombol Card Tetap Dipertahankan Sesuai Aslinya */}
                     {project.liveDemoUrl === "#" ? (
                       <button 
                         onClick={(e) => { e.preventDefault(); setShowComingSoon(true); }}
@@ -284,7 +267,7 @@ const Portfolio = () => {
             </motion.div>
           )}
 
-          {/* Tech Stack Content */}
+          {/* Modifikasi: Render Tech Stack menjadi satu kesatuan grid yang responsif dan rapi */}
           {activeTab === 'tech' && (
             <motion.div 
               key="tech-tab"
@@ -292,22 +275,12 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: false, amount: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
             >
-              {techCategories.map((category, idx) => (
-                <div key={idx} className="bg-slate-900/40 border border-cyan-500/10 rounded-3xl p-8 shadow-lg">
-                  <div className="flex items-center gap-3 mb-6 pb-4 border-b border-cyan-500/10">
-                    <span className="text-2xl">{category.icon}</span>
-                    <h3 className="text-xl font-bold text-white tracking-wide">{category.title}</h3>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    {category.skills.map((skill, sIdx) => (
-                      <div key={sIdx} className="flex items-center gap-4 bg-[#0B1120] p-3 rounded-xl border border-cyan-500/5">
-                        <span className={`text-3xl ${skill.color} drop-shadow-sm`}>{skill.icon}</span>
-                        <span className="text-gray-300 font-medium text-sm tracking-wide">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
+              {skills.map((skill, sIdx) => (
+                <div key={sIdx} className="flex flex-col items-center justify-center text-center gap-3 bg-slate-900/40 border border-cyan-500/10 p-6 rounded-2xl hover:border-cyan-500/30 hover:bg-slate-900/70 transition-all shadow-lg group">
+                  <img src={skill.icon} alt={skill.name} className="w-12 h-12 object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-gray-300 font-medium text-sm tracking-wide">{skill.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -363,7 +336,6 @@ const Portfolio = () => {
                   {selectedProject.fullDetails}
                 </p>
 
-                {/* MODIFIKASI: Menghapus "Kunjungi Website" dan membuat "Source Code GitHub" full width */}
                 <div className="pt-4 border-t border-cyan-500/10 mt-auto shrink-0">
                   <a 
                     href={selectedProject.githubUrl} 
