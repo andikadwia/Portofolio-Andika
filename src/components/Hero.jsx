@@ -24,7 +24,7 @@ const Hero = () => {
       >
         <span className="text-white mr-4 block md:inline mb-2 md:mb-0">I'm a</span>
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-teal-400">
-          Information System Student & Web Developer
+          Software Engineering Intern
         </span>
       </motion.h1>
 
