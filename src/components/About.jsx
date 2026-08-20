@@ -113,20 +113,6 @@ const About = () => {
               <img src={FotoProfil} alt="Andika Dwi Amanda" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/40 to-transparent"></div>
             </motion.div>
-
-            {/* TOMBOL CV BARU (Tepat di bawah foto) */}
-            <div className="flex flex-wrap justify-center gap-4 z-10">
-              {/* Tombol Buka Preview PDF di Tab Baru */}
-              <a 
-                href="/andikadwiamanda.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-900 font-bold py-3 px-10 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 cursor-pointer text-sm"
-              >
-              Dokumen CV
-              </a>
-            </div>
-
           </motion.div>
 
         </div>
