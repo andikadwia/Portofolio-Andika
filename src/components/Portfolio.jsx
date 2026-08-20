@@ -62,8 +62,8 @@ const Portfolio = () => {
       title: "DigiSurat",
       desc: "DigiSurat dikembangkan untuk mempermudah manajemen dan klasifikasi surat yang jumlahnya masif secara otomatis.",
       tags: ["Data Mining", "Algorithms", "Web", "AI"],
-      image: "/digisurat.jpg",
-      liveDemoUrl: "#",
+      image: "/digisurat.png",
+      liveDemoUrl: "https://youtu.be/0xkXQ4gwgzg?si=JvLOg5VbfvCFM4yF",
       githubUrl: "https://github.com/andikadwia/arsip-surat.git",
       fullDetails: "Sistem Arsip Surat Cerdas (DigiSurat) dikembangkan untuk mempermudah manajemen dan klasifikasi surat yang jumlahnya masif secara otomatis. Proyek ini membandingkan efektivitas algoritma Naive Bayes dan K-Nearest Neighbor (KNN) dalam mengoptimasi penentuan kategori surat. Tantangan terbesar adalah pada tahap text-preprocessing agar proses pengarsipan dokumen ke dalam basis data tidak mengalami kesalahan penempatan (misclassification)."
     },
@@ -72,10 +72,28 @@ const Portfolio = () => {
   // Data Sertifikasi
   const certificates = [
     {
+      title: "Project Based Learning: DigiSurat",
+      issuer: "Politeknik Negeri Batam",
+      year: "2026",
+      image: "/pbl-digisurat.jpg" 
+    },
+    {
       title: "Project Based Learning: RambuID",
       issuer: "Politeknik Negeri Batam",
       year: "2026",
       image: "/pbl-rambuid.jpg" 
+    },
+    {
+      title: "Project Based Learning: Insphony",
+      issuer: "Politeknik Negeri Batam",
+      year: "2025",
+      image: "/pbl-insphony.jpg" 
+    },
+    {
+      title: "Project Based Learning: Mahasigma Reservation",
+      issuer: "Politeknik Negeri Batam",
+      year: "2024",
+      image: "/pbl-mahasigma.jpg" 
     },
     {
       title: "Kelas Belajar Dasar AI",
